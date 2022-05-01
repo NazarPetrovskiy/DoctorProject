@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientUI.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,19 @@ using System.Windows.Shapes;
 
 namespace ClientUI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
-            InitializeComponent();
+            WindowLogin login = new WindowLogin();
+            if(login.ShowDialog() == true)
+            {
+                InitializeComponent();
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }

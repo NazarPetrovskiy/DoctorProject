@@ -20,7 +20,7 @@ namespace ServerUI
             //    dataLibrary.Add(peopleInfo);
             //    dataLibrary.SaveChanges();
 
-            //    Console.WriteLine("Дані записані ");wrwf
+            //    Console.WriteLine("Дані записані ");
             //}
             //catch(Exception ex)
             //{

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ServerDAL.Context;
+using ServerDAL.Model;
+using System;
 
 namespace ServerUI
 {
@@ -6,7 +8,24 @@ namespace ServerUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //PeopleInfo peopleInfo = new PeopleInfo();
+            //peopleInfo.Id = 1;
+            //peopleInfo.Name = "Nazar";
+            //peopleInfo.LastName = "zaazaz";
+            //peopleInfo.Age = 20;
+
+            //try
+            //{
+            //    DataLibrary dataLibrary = new DataLibrary();
+            //    dataLibrary.Add(peopleInfo);
+            //    dataLibrary.SaveChanges();
+
+            //    Console.WriteLine("Дані записані ");
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine("Помилка: " + ex.Message);
+            //}
         }
     }
 }

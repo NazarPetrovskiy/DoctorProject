@@ -5,9 +5,14 @@ using System.Collections.Generic;
 
 namespace ClientBLL.Services
 {
-    class PeopleService : IService<People>
+    public class PeopleService : IService<People>, ITranslator<People>
     {
         public void Add(People item)
+        {
+            
+        }
+
+        public People BytesToItem(byte[] bytes)
         {
             throw new NotImplementedException();
         }
@@ -23,6 +28,11 @@ namespace ClientBLL.Services
         }
 
         public People GetItem(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public byte[] ItemToBytes(People item)
         {
             throw new NotImplementedException();
         }

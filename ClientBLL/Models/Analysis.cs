@@ -1,7 +1,7 @@
 ﻿
 namespace ClientBLL.Models
 {
-    class Analysis
+    public class Analysis
     {
                
         public int ID { get; set; }

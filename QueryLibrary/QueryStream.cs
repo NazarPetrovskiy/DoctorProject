@@ -22,7 +22,7 @@ namespace QueryLibrary
         }
 
 
-        static public Query ReadMessage(byte[] byteMessage)
+        static public Query ReadQuery(byte[] byteMessage)
         {
             Query query = new Query();
 
@@ -39,5 +39,7 @@ namespace QueryLibrary
 
             return query;
         }
+
+        
     }
 }

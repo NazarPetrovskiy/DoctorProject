@@ -5,9 +5,14 @@ using ClientBLL.Models;
 
 namespace ClientBLL.Services
 {
-    class DiseaseService : IService<Disease>
+    public class DiseaseService : IService<Disease>, ITranslator<Disease>
     {
         public void Add(Disease item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Disease BytesToItem(byte[] bytes)
         {
             throw new NotImplementedException();
         }
@@ -23,6 +28,11 @@ namespace ClientBLL.Services
         }
 
         public Disease GetItem(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public byte[] ItemToBytes(Disease item)
         {
             throw new NotImplementedException();
         }

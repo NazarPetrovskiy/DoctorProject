@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClientBLL.Interfaces
 {
-    interface IService<T>
+    public interface IService<T>
     {
         IList<T> GetAll();
         T GetItem(int id);

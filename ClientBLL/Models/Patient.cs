@@ -2,7 +2,7 @@
 
 namespace ClientBLL.Models
 {
-    class Patient
+    public class Patient
     {
 
         

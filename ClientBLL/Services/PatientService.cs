@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using ClientBLL.ClientInterfaces;
-using ClientBLL.ClientModels;
+using ClientBLL.Interfaces;
+using ClientBLL.Models;
 
-namespace ClientBLL.ClientServices
+namespace ClientBLL.Services
 {
     class PatientService : IService<Patient>
     {

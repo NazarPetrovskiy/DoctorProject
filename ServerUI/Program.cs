@@ -20,23 +20,21 @@ namespace ServerUI
             //{
             //    Console.WriteLine(ex.Message);
             //}
-            
+
 
             //PeopleInfo peopleInfo = new PeopleInfo();
-            //peopleInfo.Id = 1;
-            //peopleInfo.Name = "Nazar";
-            //peopleInfo.LastName = "zaazaz";
+            ////peopleInfo.Id = 1;
+            //peopleInfo.Name = "Petrttgwrtwtrro";
+            //peopleInfo.LastName = "Vinicerwetghuk";
             //peopleInfo.Age = 20;
 
             //try
             //{
             //    DataLibrary dataLibrary = new DataLibrary();
-            //    dataLibrary.Add(peopleInfo);
+            //    dataLibrary.PeopleInfos.Add(peopleInfo);
             //    dataLibrary.SaveChanges();
 
             //    Console.WriteLine("Дані записані ");
-
-
             //}
             //catch (Exception ex)
             //{

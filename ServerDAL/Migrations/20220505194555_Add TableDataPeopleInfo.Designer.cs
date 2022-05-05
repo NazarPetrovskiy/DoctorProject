@@ -9,7 +9,7 @@ using ServerDAL.Context;
 namespace ServerDAL.Migrations
 {
     [DbContext(typeof(DataLibrary))]
-    [Migration("20220505062716_Add TableDataPeopleInfo")]
+    [Migration("20220505194555_Add TableDataPeopleInfo")]
     partial class AddTableDataPeopleInfo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

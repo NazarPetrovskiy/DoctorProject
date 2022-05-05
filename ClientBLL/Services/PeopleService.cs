@@ -1,13 +1,13 @@
-﻿using System;
+﻿using ClientBLL.Interfaces;
+using ClientBLL.Models;
+using System;
 using System.Collections.Generic;
-using ClientBLL.ClientInterfaces;
-using ClientBLL.ClientModels;
 
-namespace ClientBLL.ClientServices
+namespace ClientBLL.Services
 {
-    class DiseaseService : IService<Disease>
+    class PeopleService : IService<People>
     {
-        public void Add(Disease item)
+        public void Add(People item)
         {
             throw new NotImplementedException();
         }
@@ -17,17 +17,17 @@ namespace ClientBLL.ClientServices
             throw new NotImplementedException();
         }
 
-        public IList<Disease> GetAll()
+        public IList<People> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Disease GetItem(int id)
+        public People GetItem(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Disease item)
+        public void Update(People item)
         {
             throw new NotImplementedException();
         }

@@ -13,9 +13,9 @@ namespace ServerDAL.Model
     {
         [Key]
         public int Id { get; set; }
-        //[Required]
+        [Required, StringLength (30)]
         public string Name { get; set; }
-        //[Required]
+        [Required, StringLength(255)]
         public string Value { get; set; }
     }
 }

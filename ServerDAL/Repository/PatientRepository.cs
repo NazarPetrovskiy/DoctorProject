@@ -1,4 +1,5 @@
-﻿using ServerDAL.IRepository;
+﻿using ServerDAL.Context;
+using ServerDAL.IRepository;
 using ServerDAL.Model;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,54 @@ namespace ServerDAL.Repository
 {
     public class PatientRepository : IRepository<Patient>
     {
+        private DataLibrary dataLibrary;
+        public PatientRepository()
+        {
+            dataLibrary = new DataLibrary();
+        }
         public void Add(Patient item)
         {
-            throw new NotImplementedException();
+            if(item != null)
+            {
+                dataLibrary.Patients.Add(item);
+                dataLibrary.SaveChanges();
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var temp = dataLibrary.Patients.Find(id);
+
+            if(temp != null)
+            {
+                dataLibrary.Patients.Remove(temp);
+                dataLibrary.SaveChanges();
+            }
         }
 
         public IList<Patient> GetAll()
         {
-            throw new NotImplementedException();
+            return dataLibrary.Patients.ToList();
         }
 
         public Patient GetItem(int id)
         {
+            var temp = dataLibrary.Patients.Find(id);
+
+            if(temp != null)
+            {
+                return temp;
+            }
             throw new NotImplementedException();
         }
 
         public void Update(Patient item)
         {
-            throw new NotImplementedException();
+            if(item != null)
+            {
+                dataLibrary.Patients.Update(item);
+                dataLibrary.SaveChanges();
+            }
         }
     }
 }

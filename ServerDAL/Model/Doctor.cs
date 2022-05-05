@@ -13,6 +13,7 @@ namespace ServerDAL.Model
     {
         [Key]
         public int Id { get; set; }
+        [Required, StringLength(60)]
         public string Specialty { get; set; }
         public PeopleInfo InfoPeople { get; set; }
     }

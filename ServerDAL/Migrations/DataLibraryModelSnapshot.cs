@@ -23,12 +23,16 @@ namespace ServerDAL.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("PatientId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Value")
+                        .IsRequired()
+                        .HasMaxLength(255)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -45,9 +49,13 @@ namespace ServerDAL.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(255)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("NameDesease")
+                        .IsRequired()
+                        .HasMaxLength(30)
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("PatientId")
@@ -70,6 +78,8 @@ namespace ServerDAL.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Specialty")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -110,9 +120,13 @@ namespace ServerDAL.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

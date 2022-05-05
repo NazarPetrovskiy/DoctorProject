@@ -13,10 +13,11 @@ namespace ServerDAL.Model
     {
         [Key]
         public int Id { get; set; }
-       // [Required, StringLength(255)]
+        [Required, StringLength(30)]
         public string Name { get; set; }
-        //[Required, StringLength(255)]
+        [Required, StringLength(60)]
         public string LastName { get; set; }
+        [Required]
         public int Age { get; set; }
     }
 }

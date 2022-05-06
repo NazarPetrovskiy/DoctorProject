@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientUI", "ClientUI\ClientUI.csproj", "{E939D939-18A6-4779-AF1E-907CC4931477}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientUI", "ClientUI\ClientUI.csproj", "{E939D939-18A6-4779-AF1E-907CC4931477}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerUI", "ServerUI\ServerUI.csproj", "{BD2E5073-F5C7-4EF4-91D9-4060B8A39AEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerUI", "ServerUI\ServerUI.csproj", "{BD2E5073-F5C7-4EF4-91D9-4060B8A39AEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientBLL", "ClientBLL\ClientBLL.csproj", "{8669E892-E9B8-4920-A59C-6FD13D2C6C89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientBLL", "ClientBLL\ClientBLL.csproj", "{8669E892-E9B8-4920-A59C-6FD13D2C6C89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerBLL", "ServerBLL\ServerBLL.csproj", "{046D91F8-6A79-4CB3-9393-E4BE687A42ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerBLL", "ServerBLL\ServerBLL.csproj", "{046D91F8-6A79-4CB3-9393-E4BE687A42ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerDAL", "ServerDAL\ServerDAL.csproj", "{4F17B81A-6D51-4B18-BBCD-9DA25AFE3CCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerDAL", "ServerDAL\ServerDAL.csproj", "{4F17B81A-6D51-4B18-BBCD-9DA25AFE3CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryLibrary", "QueryLibrary\QueryLibrary.csproj", "{035C150A-BACD-4D65-AD6B-747C00535981}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4F17B81A-6D51-4B18-BBCD-9DA25AFE3CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F17B81A-6D51-4B18-BBCD-9DA25AFE3CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F17B81A-6D51-4B18-BBCD-9DA25AFE3CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{035C150A-BACD-4D65-AD6B-747C00535981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{035C150A-BACD-4D65-AD6B-747C00535981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{035C150A-BACD-4D65-AD6B-747C00535981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{035C150A-BACD-4D65-AD6B-747C00535981}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

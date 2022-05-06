@@ -12,8 +12,8 @@ namespace ServerDAL.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
-                    LastName = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
+                    LastName = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
                     Age = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -27,7 +27,7 @@ namespace ServerDAL.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Specialty = table.Column<string>(type: "TEXT", nullable: false),
+                    Specialty = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
                     InfoPeopleId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
@@ -73,8 +73,8 @@ namespace ServerDAL.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    Value = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
+                    Value = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     PatientId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
@@ -94,8 +94,8 @@ namespace ServerDAL.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    NameDesease = table.Column<string>(type: "TEXT", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", nullable: false),
+                    NameDesease = table.Column<string>(type: "TEXT", maxLength: 30, nullable: false),
+                    Description = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     PatientId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServerDAL.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace ServerBLL.Interfaces
 {
     public interface IServiceTranslator<T, T2>
     {
-        IList<T2> GetAll();
-        T2 GetItem(int id);
+        IList<T> GetAll(IList<T2> items);
+        T GetItem(T2 item);
         T2 Add(T item);
         T2 Update(T item);
     }

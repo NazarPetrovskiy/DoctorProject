@@ -8,7 +8,7 @@ namespace ServerBLL.Models
 {
     public class DoctorDTO
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Specialty { get; set; }
         public PeopleInfoDTO InfoPeople { get; set; }
     }

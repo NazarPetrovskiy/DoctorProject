@@ -8,7 +8,7 @@ namespace ServerBLL.Models
 {
     public class PatientDTO
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public PeopleInfoDTO InfoPeople { get; set; }
         public DoctorDTO HealingDoctor { get; set; }
         public virtual IList<DiseaseDTO> DiseaseDTOs { get; set; }

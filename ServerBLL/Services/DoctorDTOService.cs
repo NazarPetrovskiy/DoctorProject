@@ -1,5 +1,7 @@
 ﻿using ServerBLL.Interfaces;
 using ServerBLL.Models;
+using ServerDAL.IRepository;
+using ServerDAL.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,37 +13,40 @@ namespace ServerBLL.Services
 {
     public class DoctorDTOService : IService<DoctorDTO>
     {
-        private ObservableCollection<DoctorDTO> _doctorDTOs;
+        private IRepository<Doctor> _repository;
+        private DoctorDTOServiceTranslator _serviceTranslator;
 
         public DoctorDTOService()
         {
-            _doctorDTOs = new ObservableCollection<DoctorDTO>();
+            _serviceTranslator = new DoctorDTOServiceTranslator();
         }
 
         public void Add(DoctorDTO item)
         {
-
-            throw new NotImplementedException();
+            if (item != null)
+                _repository.Add(_serviceTranslator.Add(item));
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            if (id >= 0)
+                _repository.Delete(id);
         }
 
         public IList<DoctorDTO> GetAll()
         {
-            throw new NotImplementedException();
+            return _serviceTranslator.GetAll(_repository.GetAll());
         }
 
         public DoctorDTO GetItem(int id)
         {
-            throw new NotImplementedException();
+            return _serviceTranslator.GetItem(_repository.GetItem(id));
         }
 
         public void Update(DoctorDTO item)
         {
-            throw new NotImplementedException();
+            if (item != null)
+                _repository.Update(_serviceTranslator.Update(item));
         }
 
         public bool IsLogin(string login, string password)

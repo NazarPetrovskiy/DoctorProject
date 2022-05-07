@@ -4,6 +4,6 @@ namespace QueryLibrary
     public class ByteConverter
     {
 
-        public static byte[] DoctorToBytes(Doctor)
+        //public static byte[] DoctorToBytes(Doctor)
     }
 }

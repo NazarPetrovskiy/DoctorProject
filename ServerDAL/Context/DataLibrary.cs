@@ -12,7 +12,7 @@ namespace ServerDAL.Context
     {
         public DataLibrary()
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Patient> Patients { get; set; }
@@ -21,7 +21,8 @@ namespace ServerDAL.Context
         public DbSet<Analysis> Analyses { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(@"DataSource=DoctorProjectDB.db");
+            //optionsBuilder.UseSqlite(@"DataSource=DoctorProjectDB.db");
+            optionsBuilder.UseNpgsql(@"Server=91.238.103.51;Port=5743;Database=doctorkozakdb;User Id=kozakuser;Password=$522*6$pBGstts99&^^8djjdsLLu(jjj998s3$$)K$t!Ube22}xk;");
         }
     }
 }

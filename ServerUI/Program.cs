@@ -12,8 +12,12 @@ namespace ServerUI
             try
             {
                 AnalysesRepository analysesRepository = new AnalysesRepository();
-                analysesRepository.Add(new Analysis() { Name = "Аналізи пяткі", Value = "Liku" });
-
+                //analysesRepository.Add(new Analysis() { Name = "Аналізи для бабушки", Value = "Liku" });
+                var list = analysesRepository.GetAll();
+                foreach (var item in list)
+                {
+                    Console.WriteLine(item.Name);
+                }
                 Console.WriteLine("All good");
             }
             catch (Exception ex)

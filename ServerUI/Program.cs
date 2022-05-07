@@ -9,17 +9,17 @@ namespace ServerUI
     {
         static void Main(string[] args)
         {
-            //try
-            //{
-            //    AnalysesRepository analysesRepository = new AnalysesRepository();
-            //    analysesRepository.Add(new Analysis() { Name = "Something", Value = "Liku" });
+            try
+            {
+                AnalysesRepository analysesRepository = new AnalysesRepository();
+                analysesRepository.Add(new Analysis() { Name = "Аналізи пяткі", Value = "Liku" });
 
-            //    Console.WriteLine("All good");
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //}
+                Console.WriteLine("All good");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
 
             //PeopleInfo peopleInfo = new PeopleInfo();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClientBLL.Interfaces
 {
-    public interface IServiceTranslator<T, T2>
+    public interface IServiceTranslator<T, T2> where T : class where T2 : class
     {
         T2 ItemDTO_ToItem(T item);
         T Item_ToItemDTO(T2 item);

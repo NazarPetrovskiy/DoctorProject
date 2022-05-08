@@ -13,5 +13,5 @@ namespace ClientBLL.Interfaces
         void Add(T item);
         void Delete(int id);
         void Update(T item);
-    }
+    } 
 }

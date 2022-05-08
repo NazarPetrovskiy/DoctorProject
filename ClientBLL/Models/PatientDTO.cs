@@ -12,7 +12,7 @@ namespace ClientBLL.Models
         public int Id { get; set; }
         public PeopleInfoDTO InfoPeople { get; set; }
         public DoctorDTO HealingDoctor { get; set; }
-        public virtual IList<DiseaseDTO> DiseaseDTOs { get; set; }
+        public virtual IList<DiseaseDTO> Diseases { get; set; }
         public virtual IList<AnalysisDTO> Analyses { get; set; }
     }
 }

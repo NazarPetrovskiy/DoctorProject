@@ -9,9 +9,7 @@ namespace ClientBLL.Interfaces
 {
     public interface IServiceTranslator<T, T2>
     {
-        IList<T> GetAll(IList<T2> items);
-        T GetItem(T2 item);
-        T2 Add(T item);
-        T2 Update(T item);
+        T2 ItemDTO_ToItem(T item);
+        T Item_ToItemDTO(T2 item);
     }
 }

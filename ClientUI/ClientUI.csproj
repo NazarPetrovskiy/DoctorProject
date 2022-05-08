@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClientBLL\ClientBLL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\LogInIcon.png" />
   </ItemGroup>
 

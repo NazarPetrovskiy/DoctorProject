@@ -5,9 +5,9 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientUI", "ClientUI\ClientUI.csproj", "{E939D939-18A6-4779-AF1E-907CC4931477}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientBLL", "ServerBLL\ClientBLL.csproj", "{046D91F8-6A79-4CB3-9393-E4BE687A42ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientBLL", "ClientBLL\ClientBLL.csproj", "{046D91F8-6A79-4CB3-9393-E4BE687A42ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientDAL", "ServerDAL\ClientDAL.csproj", "{4F17B81A-6D51-4B18-BBCD-9DA25AFE3CCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientDAL", "ClientDAL\ClientDAL.csproj", "{4F17B81A-6D51-4B18-BBCD-9DA25AFE3CCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

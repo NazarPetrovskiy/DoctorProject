@@ -1,13 +1,13 @@
-﻿using ServerDAL.Context;
-using ServerDAL.IRepository;
-using ServerDAL.Model;
+﻿using ClientDAL.Context;
+using ClientDAL.IRepository;
+using ClientDAL.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServerDAL.Repository
+namespace ClientDAL.Repository
 {
     public class DoctorRepository : IRepository<Doctor>
     {

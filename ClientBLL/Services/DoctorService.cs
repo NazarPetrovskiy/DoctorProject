@@ -1,6 +1,5 @@
 ﻿using ClientBLL.Interfaces;
 using ClientBLL.Models;
-using QueryLibrary;
 using System;
 using System.Collections.Generic;
 
@@ -38,13 +37,13 @@ namespace ClientBLL.Services
         {
 
 
-            Query query = new Query()
-            {
-                Type = TypeCommand.Null,
-                Status = StatusQuery.LogIn,
-                CurrentModel = CurrentModel.Doctor,
+            //Query query = new Query()
+            //{
+            //    Type = TypeCommand.Null,
+            //    Status = StatusQuery.LogIn,
+            //    CurrentModel = CurrentModel.Doctor,
                 
-            };
+            //};
 
             return true;
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServerBLL.Models
+namespace ClientBLL.Models
 {
     public class PeopleInfoDTO
     {

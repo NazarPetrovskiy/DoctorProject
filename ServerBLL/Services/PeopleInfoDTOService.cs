@@ -1,5 +1,5 @@
-﻿using ServerBLL.Interfaces;
-using ServerBLL.Models;
+﻿using ClientBLL.Interfaces;
+using ClientBLL.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServerBLL.Services
+namespace ClientBLL.Services
 {
     public class PeopleInfoDTOService : IService<PeopleInfoDTO>
     {

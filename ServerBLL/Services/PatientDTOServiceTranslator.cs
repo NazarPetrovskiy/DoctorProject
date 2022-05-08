@@ -1,13 +1,13 @@
-﻿using ServerBLL.Interfaces;
-using ServerBLL.Models;
-using ServerDAL.Model;
+﻿using ClientBLL.Interfaces;
+using ClientBLL.Models;
+using ClientDAL.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServerBLL.Services
+namespace ClientBLL.Services
 {
     public class PatientDTOServiceTranslator : IServiceTranslator<PatientDTO, Patient>
     {

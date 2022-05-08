@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ServerDAL.Model;
+using ClientDAL.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServerDAL.Context
+namespace ClientDAL.Context
 {
     public class DataLibrary: DbContext
     {

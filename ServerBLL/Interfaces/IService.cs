@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServerBLL.Interfaces
+namespace ClientBLL.Interfaces
 {
     public interface IService<T>
     {

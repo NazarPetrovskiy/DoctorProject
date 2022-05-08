@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using ServerDAL.Context;
+using ClientDAL.Context;
 
-namespace ServerDAL.Migrations
+namespace ClientDAL.Migrations
 {
     [DbContext(typeof(DataLibrary))]
     [Migration("20220507161600_Init database new Postgres")]

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ServerDAL\ServerDAL.csproj" />
+    <ProjectReference Include="..\ServerDAL\ClientDAL.csproj" />
   </ItemGroup>
 
 </Project>

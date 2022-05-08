@@ -1,7 +1,7 @@
-﻿using ServerBLL.Interfaces;
-using ServerBLL.Models;
-using ServerDAL.IRepository;
-using ServerDAL.Model;
+﻿using ClientBLL.Interfaces;
+using ClientBLL.Models;
+using ClientDAL.IRepository;
+using ClientDAL.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServerBLL.Services
+namespace ClientBLL.Services
 {
     public class DiseaseDTOService : IService<DiseaseDTO>
     {

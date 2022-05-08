@@ -1,12 +1,12 @@
-﻿using ServerDAL.Context;
-using ServerDAL.Model;
+﻿using ClientDAL.Context;
+using ClientDAL.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServerDAL.IRepository
+namespace ClientDAL.IRepository
 {
     public class AnalysesRepository : IRepository<Analysis>
     {

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using ServerDAL.Context;
+using ClientDAL.Context;
 
-namespace ServerDAL.Migrations
+namespace ClientDAL.Migrations
 {
     [DbContext(typeof(DataLibrary))]
     partial class DataLibraryModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace ServerDAL.Migrations
                 .HasAnnotation("ProductVersion", "5.0.16")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("ServerDAL.Model.Analysis", b =>
+            modelBuilder.Entity("ClientDAL.Model.Analysis", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,7 +46,7 @@ namespace ServerDAL.Migrations
                     b.ToTable("TableDataAnalysis");
                 });
 
-            modelBuilder.Entity("ServerDAL.Model.Disease", b =>
+            modelBuilder.Entity("ClientDAL.Model.Disease", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -73,7 +73,7 @@ namespace ServerDAL.Migrations
                     b.ToTable("TableDataDisease");
                 });
 
-            modelBuilder.Entity("ServerDAL.Model.Doctor", b =>
+            modelBuilder.Entity("ClientDAL.Model.Doctor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -95,7 +95,7 @@ namespace ServerDAL.Migrations
                     b.ToTable("TableDataDoctor");
                 });
 
-            modelBuilder.Entity("ServerDAL.Model.Patient", b =>
+            modelBuilder.Entity("ClientDAL.Model.Patient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -117,7 +117,7 @@ namespace ServerDAL.Migrations
                     b.ToTable("TableDataPatient");
                 });
 
-            modelBuilder.Entity("ServerDAL.Model.PeopleInfo", b =>
+            modelBuilder.Entity("ClientDAL.Model.PeopleInfo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -142,36 +142,36 @@ namespace ServerDAL.Migrations
                     b.ToTable("TableDataPeopleInfo");
                 });
 
-            modelBuilder.Entity("ServerDAL.Model.Analysis", b =>
+            modelBuilder.Entity("ClientDAL.Model.Analysis", b =>
                 {
-                    b.HasOne("ServerDAL.Model.Patient", null)
+                    b.HasOne("ClientDAL.Model.Patient", null)
                         .WithMany("Analyses")
                         .HasForeignKey("PatientId");
                 });
 
-            modelBuilder.Entity("ServerDAL.Model.Disease", b =>
+            modelBuilder.Entity("ClientDAL.Model.Disease", b =>
                 {
-                    b.HasOne("ServerDAL.Model.Patient", null)
+                    b.HasOne("ClientDAL.Model.Patient", null)
                         .WithMany("Diseases")
                         .HasForeignKey("PatientId");
                 });
 
-            modelBuilder.Entity("ServerDAL.Model.Doctor", b =>
+            modelBuilder.Entity("ClientDAL.Model.Doctor", b =>
                 {
-                    b.HasOne("ServerDAL.Model.PeopleInfo", "InfoPeople")
+                    b.HasOne("ClientDAL.Model.PeopleInfo", "InfoPeople")
                         .WithMany()
                         .HasForeignKey("InfoPeopleId");
 
                     b.Navigation("InfoPeople");
                 });
 
-            modelBuilder.Entity("ServerDAL.Model.Patient", b =>
+            modelBuilder.Entity("ClientDAL.Model.Patient", b =>
                 {
-                    b.HasOne("ServerDAL.Model.PeopleInfo", "InfoPeople")
+                    b.HasOne("ClientDAL.Model.PeopleInfo", "InfoPeople")
                         .WithMany()
                         .HasForeignKey("InfoPeopleId");
 
-                    b.HasOne("ServerDAL.Model.Doctor", "Likar")
+                    b.HasOne("ClientDAL.Model.Doctor", "Likar")
                         .WithMany()
                         .HasForeignKey("LikarId");
 
@@ -180,7 +180,7 @@ namespace ServerDAL.Migrations
                     b.Navigation("Likar");
                 });
 
-            modelBuilder.Entity("ServerDAL.Model.Patient", b =>
+            modelBuilder.Entity("ClientDAL.Model.Patient", b =>
                 {
                     b.Navigation("Analyses");
 

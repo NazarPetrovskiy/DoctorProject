@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ClientDAL.Model
 {
     [Table("TableDataAnalysis")]
-    public class Analysis
+    public class Analysis: BaseEntity<int>
     {
         [Key]
         public int Id { get; set; }

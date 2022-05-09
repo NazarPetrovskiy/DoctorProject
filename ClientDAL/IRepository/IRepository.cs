@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClientDAL.IRepository
 {
-    public interface IRepository<T>
+    public interface IRepository<TEntity, TIdType>
     {
-        IList<T> GetAll();
-        T GetItem(int id);
-        void Add(T item);
-        void Delete(int id);
-        void Update(T item);
+        public bool Add(TEntity entity);
+        public bool Update(TEntity entity);
+        public IQueryable<TEntity> GetAll();
+        public bool Delete(TIdType id);
+
     }
 }

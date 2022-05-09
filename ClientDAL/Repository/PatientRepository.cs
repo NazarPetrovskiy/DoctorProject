@@ -9,56 +9,13 @@ using System.Threading.Tasks;
 
 namespace ClientDAL.Repository
 {
-    public class PatientRepository : IRepository<Patient>
+    public class PatientRepository : BaseRepository<Patient, int>
     {
-        private DataLibrary dataLibrary;
-        public PatientRepository()
-        {
-            dataLibrary = new DataLibrary();
-        }
-        public void Add(Patient item)
-        {
-            if(item != null)
-            {
-                dataLibrary.Patients.Add(item);
-                dataLibrary.SaveChanges();
-            }
-        }
+        private readonly DataLibrary dataLibrary;
 
-        public void Delete(int id)
+        public PatientRepository(DataLibrary _dataLibrary) : base(_dataLibrary)
         {
-            var temp = dataLibrary.Patients.Find(id);
-
-            if(temp != null)
-            {
-                dataLibrary.Patients.Remove(temp);
-                dataLibrary.SaveChanges();
-            }
-        }
-
-        public IList<Patient> GetAll()
-        {
-            return dataLibrary.Patients.ToList();
-        }
-
-        public Patient GetItem(int id)
-        {
-            var temp = dataLibrary.Patients.Find(id);
-
-            if(temp != null)
-            {
-                return temp;
-            }
-            throw new NotImplementedException();
-        }
-
-        public void Update(Patient item)
-        {
-            if(item != null)
-            {
-                dataLibrary.Patients.Update(item);
-                dataLibrary.SaveChanges();
-            }
+            dataLibrary = _dataLibrary;
         }
     }
 }

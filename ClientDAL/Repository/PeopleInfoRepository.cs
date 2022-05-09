@@ -9,56 +9,13 @@ using System.Threading.Tasks;
 
 namespace ClientDAL.Repository
 {
-    public class PeopleInfoRepository : IRepository<PeopleInfo>
+    public class PeopleInfoRepository : BaseRepository<PeopleInfo, int>
     {
-        private DataLibrary dataLibrary;
-        public PeopleInfoRepository()
-        {
-            dataLibrary = new DataLibrary();
-        }
-        public void Add(PeopleInfo item)
-        {
-            if(item != null)
-            {
-                dataLibrary.PeopleInfos.Add(item);
-                dataLibrary.SaveChanges();
-            }
-        }
+        private readonly DataLibrary dataLibrary;
 
-        public void Delete(int id)
+        public PeopleInfoRepository(DataLibrary _dataLibrary) : base(_dataLibrary)
         {
-            var temp = dataLibrary.PeopleInfos.Find(id);
-
-            if(temp != null)
-            {
-                dataLibrary.PeopleInfos.Remove(temp);
-                dataLibrary.SaveChanges();
-            }
-        }
-
-        public IList<PeopleInfo> GetAll()
-        {
-            return dataLibrary.PeopleInfos.ToList();
-        }
-
-        public PeopleInfo GetItem(int id)
-        {
-            var temp = dataLibrary.PeopleInfos.Find(id);
-
-            if(temp != null)
-            {
-                return temp;
-            }
-            throw new NotImplementedException();
-        }
-
-        public void Update(PeopleInfo item)
-        {
-            if(item != null)
-            {
-                dataLibrary.PeopleInfos.Update(item);
-                dataLibrary.SaveChanges();
-            }
+            dataLibrary = _dataLibrary;
         }
     }
 }

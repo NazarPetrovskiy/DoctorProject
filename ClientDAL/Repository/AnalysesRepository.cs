@@ -1,5 +1,6 @@
 ﻿using ClientDAL.Context;
 using ClientDAL.Model;
+using ClientDAL.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,56 +9,13 @@ using System.Threading.Tasks;
 
 namespace ClientDAL.IRepository
 {
-    public class AnalysesRepository : IRepository<Analysis>
+    public class AnalysesRepository : BaseRepository<Analysis, int>
     {
-        private DataLibrary dataLibrary;
-        public AnalysesRepository()
-        {
-            dataLibrary = new DataLibrary();
-        }
-        public void Add(Analysis item)
-        {
-            if(item != null)
-            {
-                dataLibrary.Analyses.Add(item);
-                dataLibrary.SaveChanges();
-            }
-        }
+        private readonly DataLibrary dataLibrary;
 
-        public void Delete(int id)
+        public AnalysesRepository(DataLibrary _dataLibrary) : base(_dataLibrary)
         {
-            var temp = dataLibrary.Analyses.Find(id);
-
-            if(temp != null)
-            {
-                dataLibrary.Analyses.Remove(temp);
-                dataLibrary.SaveChanges();
-            }
-        }
-
-        public IList<Analysis> GetAll()
-        {
-            return dataLibrary.Analyses.ToList();
-        }
-
-        public Analysis GetItem(int id)
-        {
-            var temp = dataLibrary.Analyses.Find(id);
-
-            if(temp!= null)
-            {
-                return temp;
-            }
-            throw new NotImplementedException();
-        }
-
-        public void Update(Analysis item)
-        {
-            if(item != null)
-            {
-                dataLibrary.Analyses.Update(item);
-                dataLibrary.SaveChanges();
-            }
+            dataLibrary = _dataLibrary;
         }
     }
 }

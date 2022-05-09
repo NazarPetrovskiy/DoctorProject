@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClientDAL.IRepository
 {
-    public interface IRepositoryUser : IRepository<PeopleInfo, int>
+    public interface IRepositoryUser : IRepository<Doctor, int>
     {
         public bool IsLogin(string l, string p);
     }

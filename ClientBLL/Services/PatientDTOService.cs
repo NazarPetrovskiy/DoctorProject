@@ -13,7 +13,7 @@ namespace ClientBLL.Services
 {
     public class PatientDTOService : IService<PatientDTO>, IServiceTranslator<PatientDTO, Patient>
     {
-        private IRepository<Patient> _repository;
+        private IRepository<Patient, int> _repository;
 
         public PatientDTOService()
         {

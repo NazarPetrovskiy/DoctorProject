@@ -13,7 +13,7 @@ namespace ClientBLL.Services
 {
     public class PeopleInfoDTOService :IService<PeopleInfoDTO> ,IServiceTranslator<PeopleInfoDTO, PeopleInfo>
     {
-        private IRepository<PeopleInfo> _repository;
+        private IRepository<PeopleInfo, int> _repository;
 
         public PeopleInfoDTOService()
         {

@@ -13,7 +13,7 @@ namespace ClientBLL.Services
 {
     public class AnalysesDTOService : IService<AnalysisDTO>, IServiceTranslator<AnalysisDTO, Analysis>
     {
-        private IRepository<Analysis> _repository;
+        private IRepository<Analysis, int> _repository;
 
         public AnalysesDTOService()
         {

@@ -10,6 +10,7 @@ namespace ClientDAL.IRepository
     {
         public bool Add(TEntity entity);
         public bool Update(TEntity entity);
+        public TEntity GetItem(int Id);
         public IQueryable<TEntity> GetAll();
         public bool Delete(TIdType id);
 

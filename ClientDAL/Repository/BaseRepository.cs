@@ -55,6 +55,16 @@ namespace ClientDAL.Repository
             return _context.Set<TEntity>().AsQueryable();
         }
 
+        public TEntity GetItem(int Id)
+        {
+            var temp = _context.Find<TEntity>(Id);
+            if (temp != null)
+            {
+                return temp;
+            }
+            throw new NotImplementedException();
+        }
+
         public bool Update(TEntity entity)
         {
             try

@@ -15,9 +15,9 @@ namespace ClientBLL.Services
     {
         private IRepository<Analysis, int> _repository;
 
-        public AnalysesDTOService()
+        public AnalysesDTOService(IRepository<Analysis, int> repository)
         {
-            
+            _repository = repository;
         }
 
         public void Add(AnalysisDTO item)
@@ -45,6 +45,7 @@ namespace ClientBLL.Services
         {
             return Item_ToItemDTO(_repository.GetItem(id));
         }
+
         public void Update(AnalysisDTO item)
         {
             _repository.Update(ItemDTO_ToItem(item));

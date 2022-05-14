@@ -15,9 +15,9 @@ namespace ClientBLL.Services
     {
         private IRepository<PeopleInfo, int> _repository;
 
-        public PeopleInfoDTOService()
+        public PeopleInfoDTOService(IRepository<PeopleInfo, int> repository)
         {
-
+            _repository = repository;
         }
 
         public void Add(PeopleInfoDTO item)

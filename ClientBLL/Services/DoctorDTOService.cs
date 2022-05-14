@@ -13,27 +13,30 @@ namespace ClientBLL.Services
 {
     public class DoctorDTOService : IService<DoctorDTO>, IServiceTranslator<DoctorDTO, Doctor>
     {
-        private IRepository<Doctor, int> _repository;
+        private IRepository<Doctor, int> _repositoryDoctor;
+        private IRepository<PeopleInfo, int> _repositoryPeopleInfo;
 
-        public DoctorDTOService()
+        public DoctorDTOService(IRepository<Doctor, int> repositoryDoctor,
+                                IRepository<PeopleInfo, int> repositoryPeopleInfo)
         {
-            
+            _repositoryDoctor = repositoryDoctor;
+            _repositoryPeopleInfo = repositoryPeopleInfo;
         }
 
         public void Add(DoctorDTO item)
         {
-            _repository.Add(ItemDTO_ToItem(item));
+            _repositoryDoctor.Add(ItemDTO_ToItem(item));
         }
 
         public void Delete(int id)
         {
-            _repository.Delete(id);
+            _repositoryDoctor.Delete(id);
         }
 
         public IList<DoctorDTO> GetAll()
         {
             List<DoctorDTO> doctorDTOs = new List<DoctorDTO>();
-            foreach (var item in _repository.GetAll())
+            foreach (var item in _repositoryDoctor.GetAll())
             {
                 doctorDTOs.Add(Item_ToItemDTO(item));
             }
@@ -43,25 +46,25 @@ namespace ClientBLL.Services
 
         public DoctorDTO GetItem(int id)
         {
-            return Item_ToItemDTO(_repository.GetItem(id));
+            return Item_ToItemDTO(_repositoryDoctor.GetItem(id));
         }
 
         public void Update(DoctorDTO item)
         {
-            _repository.Update(ItemDTO_ToItem(item));
+            _repositoryDoctor.Update(ItemDTO_ToItem(item));
         }
 
         public Doctor ItemDTO_ToItem(DoctorDTO item) => new Doctor()
         {
             Id = item.Id,
-            InfoPeople = new PeopleInfoDTOService().ItemDTO_ToItem(item.InfoPeople),
+            InfoPeople = new PeopleInfoDTOService(_repositoryPeopleInfo).ItemDTO_ToItem(item.InfoPeople),
             Specialty = item.Specialty
         };
 
         public DoctorDTO Item_ToItemDTO(Doctor item) => new DoctorDTO()
         {
             Id = item.Id,
-            InfoPeople = new PeopleInfoDTOService().Item_ToItemDTO(item.InfoPeople),
+            InfoPeople = new PeopleInfoDTOService(_repositoryPeopleInfo).Item_ToItemDTO(item.InfoPeople),
             Specialty = item.Specialty
         };
     }

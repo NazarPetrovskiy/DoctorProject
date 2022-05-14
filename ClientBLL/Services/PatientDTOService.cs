@@ -13,27 +13,39 @@ namespace ClientBLL.Services
 {
     public class PatientDTOService : IService<PatientDTO>, IServiceTranslator<PatientDTO, Patient>
     {
-        private IRepository<Patient, int> _repository;
+        private IRepository<Patient, int> _repositoryPatient;
+        private IRepository<Analysis, int> _repositoryAnalyses;
+        private IRepository<Disease, int> _repositoryDisease;
+        private IRepository<Doctor, int> _repositoryDoctor;
+        private IRepository<PeopleInfo, int> _repositoryPeopleInfo;
 
-        public PatientDTOService()
+        public PatientDTOService(IRepository<Patient, int> repositoryPatient,
+                                 IRepository<Analysis, int> repositoryAnalyses,
+                                 IRepository<Disease, int> repositoryDisease,
+                                 IRepository<Doctor, int> repositoryDoctor,
+                                 IRepository<PeopleInfo, int> repositoryPeopleInfo)
         {
-            
+            _repositoryPatient = repositoryPatient;
+            _repositoryAnalyses = repositoryAnalyses;
+            _repositoryDisease = repositoryDisease;
+            _repositoryDoctor = repositoryDoctor;
+            _repositoryPeopleInfo = repositoryPeopleInfo;
         }
 
         public void Add(PatientDTO item)
         {
-            _repository.Add(ItemDTO_ToItem(item));
+            _repositoryPatient.Add(ItemDTO_ToItem(item));
         }
 
         public void Delete(int id)
         {
-            _repository.Delete(id);
+            _repositoryPatient.Delete(id);
         }
 
         public IList<PatientDTO> GetAll()
         {
             List<PatientDTO> peopleInfoDTOs = new List<PatientDTO>();
-            foreach (var item in _repository.GetAll())
+            foreach (var item in _repositoryPatient.GetAll())
             {
                 peopleInfoDTOs.Add(Item_ToItemDTO(item));
             }
@@ -43,12 +55,12 @@ namespace ClientBLL.Services
 
         public PatientDTO GetItem(int id)
         {
-            return Item_ToItemDTO(_repository.GetItem(id));
+            return Item_ToItemDTO(_repositoryPatient.GetItem(id));
         }
 
         public void Update(PatientDTO item)
         {
-            _repository.Update(ItemDTO_ToItem(item));
+            _repositoryPatient.Update(ItemDTO_ToItem(item));
         }
 
         public Patient ItemDTO_ToItem(PatientDTO item)
@@ -56,20 +68,20 @@ namespace ClientBLL.Services
             IQueryable<Analysis> analysis = new List<Analysis>().AsQueryable();
             foreach (var value in item.Analyses)
             {
-                analysis.Append(new AnalysesDTOService().ItemDTO_ToItem(value));
+                analysis.Append(new AnalysesDTOService(_repositoryAnalyses).ItemDTO_ToItem(value));
             }
 
             IQueryable<Disease> diseases = new List<Disease>().AsQueryable();
             foreach (var value in item.Diseases)
             {
-                diseases.Append(new DiseaseDTOService().ItemDTO_ToItem(value));
+                diseases.Append(new DiseaseDTOService(_repositoryDisease).ItemDTO_ToItem(value));
             }
 
             return new Patient()
             {
                 Id = item.Id,
-                InfoPeople = new PeopleInfoDTOService().ItemDTO_ToItem(item.InfoPeople),
-                Likar = new DoctorDTOService().ItemDTO_ToItem(item.HealingDoctor),
+                InfoPeople = new PeopleInfoDTOService(_repositoryPeopleInfo).ItemDTO_ToItem(item.InfoPeople),
+                Likar = new DoctorDTOService(_repositoryDoctor, _repositoryPeopleInfo).ItemDTO_ToItem(item.HealingDoctor),
                 Analyses = analysis.ToList(),
                 Diseases = diseases.ToList()
             };
@@ -80,20 +92,20 @@ namespace ClientBLL.Services
             IQueryable<AnalysisDTO> analysis = new List<AnalysisDTO>().AsQueryable();
             foreach (var value in item.Analyses)
             {
-                analysis.Append(new AnalysesDTOService().Item_ToItemDTO(value));
+                analysis.Append(new AnalysesDTOService(_repositoryAnalyses).Item_ToItemDTO(value));
             }
 
             IQueryable<DiseaseDTO> diseases = new List<DiseaseDTO>().AsQueryable();
             foreach (var value in item.Diseases)
             {
-                diseases.Append(new DiseaseDTOService().Item_ToItemDTO(value));
+                diseases.Append(new DiseaseDTOService(_repositoryDisease).Item_ToItemDTO(value));
             }
 
             return new PatientDTO()
             {
                 Id = item.Id,
-                InfoPeople = new PeopleInfoDTOService().Item_ToItemDTO(item.InfoPeople),
-                HealingDoctor = new DoctorDTOService().Item_ToItemDTO(item.Likar),
+                InfoPeople = new PeopleInfoDTOService(_repositoryPeopleInfo).Item_ToItemDTO(item.InfoPeople),
+                HealingDoctor = new DoctorDTOService(_repositoryDoctor, _repositoryPeopleInfo).Item_ToItemDTO(item.Likar),
                 Analyses = analysis.ToList(),
                 Diseases = diseases.ToList()
             };

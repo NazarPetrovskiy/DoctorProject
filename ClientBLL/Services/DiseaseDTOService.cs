@@ -15,9 +15,9 @@ namespace ClientBLL.Services
     {
         private IRepository<Disease, int> _repository;
 
-        public DiseaseDTOService()
+        public DiseaseDTOService(IRepository<Disease, int> repository)
         {
-            
+            _repository = repository;
         }
 
         public void Add(DiseaseDTO item)

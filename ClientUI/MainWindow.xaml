@@ -5,8 +5,158 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClientUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow"
+        Height="500"
+        Width="1200">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="Foreground" Value="#534340"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Cursor" Value="IBeam"/>
+            <Setter Property="Background" Value="#F4FCD9"/>
+            <Setter Property="Foreground" Value="#534340"/>
+            <Setter Property="CaretBrush" Value="#534340"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="#1572A1"/>
+            <Setter Property="Foreground" Value="#E3BEC6"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid Background="#86bed8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   FontSize="32"
+                   FontWeight="SemiBold"
+                   Foreground="Black">Doctor Info</TextBlock>
+
+        <Button Name="buttonEditInfo"
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Click="buttonEditInfo_Click">Edit info</Button>
+
+        <Button Name="buttonHide"
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Stretch"
+                Click="buttonHide_Click">Hide</Button>
+        
+        <Border BorderBrush="Black"
+                BorderThickness="2"
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="5,45,5,5">
+            <Grid Background="CadetBlue">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!--Row 1-->
+                <Image Grid.Row="0"
+                       Grid.Column="1"
+                       Margin="0,5,0,0"
+                       Source="/Images/doctor.png"></Image>
+
+                <!--Row 2-->
+                <Grid HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0">Speciality:</TextBlock>
+                    <TextBox Name="textboxSpeciality"
+                             Grid.Row="0"
+                             Grid.Column="1"
+                             IsReadOnly="True"></TextBox>
+
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="0">Name:</TextBlock>
+                    <TextBox Name="textboxName"
+                             Grid.Row="1"
+                             Grid.Column="2"
+                             IsReadOnly="True"></TextBox>
+
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="0">Lastname:</TextBlock>
+                    <TextBox Name="textboxLastname"
+                             Grid.Row="2"
+                             Grid.Column="2"
+                             IsReadOnly="True"></TextBox>
+
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="0">Age:</TextBlock>
+                    <TextBox Name="textboxAge"
+                             Grid.Row="3"
+                             Grid.Column="3"
+                             IsReadOnly="True"></TextBox>
+                </Grid>
+
+            </Grid>
+        </Border>
+
+        <UniformGrid Grid.Row="1"
+                     Grid.Column="0"
+                     Columns="2"
+                     Rows="1"
+                     VerticalAlignment="Top">
+            <Button Name="buttonEditApply"
+                Visibility="Hidden"
+                Click="buttonEditApply_Click">Apply</Button>
+            
+            <Button Name="buttonEditCancel"
+                Visibility="Hidden"
+                Click="buttonEditCancel_Click">Cancel</Button>
+        </UniformGrid>
     </Grid>
 </Window>

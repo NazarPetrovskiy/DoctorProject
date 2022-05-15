@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\doctor.png" />
     <None Remove="Images\LogInIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\doctor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -15,7 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\LogInIcon.png" />
+    <Resource Include="Images\LogInIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientUI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,9 +17,10 @@ namespace ClientUI.Windows
 {
     public partial class WindowLogin : Window
     {
-        public WindowLogin()
+        public WindowLogin(BaseViewModel baseViewModel)
         {
             InitializeComponent();
+            this.DataContext = baseViewModel;
             ChangeMainGrid(0, 1, 1, 1, 200, 500);
         }
 
@@ -39,7 +41,7 @@ namespace ClientUI.Windows
         #region LogIn events
         private void LoginClick(object sender, RoutedEventArgs e) //
         {
-            this.DialogResult = true;
+            //this.DialogResult = true;
             this.Close();
         }
         private void SigInMouseDown(object sender, MouseButtonEventArgs e) { ChangeMainGrid(1, 0, 1, 1, 350, 500); }

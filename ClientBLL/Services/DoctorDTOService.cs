@@ -14,12 +14,16 @@ namespace ClientBLL.Services
     public class DoctorDTOService : IService<DoctorDTO>, IServiceTranslator<DoctorDTO, Doctor>
     {
         private IRepository<Doctor, int> _repositoryDoctor;
+        private IRepositoryUser _repositoryUserDoctor;
+
         private IRepository<PeopleInfo, int> _repositoryPeopleInfo;
 
         public DoctorDTOService(IRepository<Doctor, int> repositoryDoctor,
+                                IRepositoryUser repositoryUserDoctor,
                                 IRepository<PeopleInfo, int> repositoryPeopleInfo)
         {
             _repositoryDoctor = repositoryDoctor;
+            _repositoryUserDoctor = repositoryUserDoctor;
             _repositoryPeopleInfo = repositoryPeopleInfo;
         }
 
@@ -67,5 +71,10 @@ namespace ClientBLL.Services
             InfoPeople = new PeopleInfoDTOService(_repositoryPeopleInfo).Item_ToItemDTO(item.InfoPeople),
             Specialty = item.Specialty
         };
+
+        public bool IsLogin(string login, string password)
+        {
+            return _repositoryUserDoctor.IsLogin(login, password);
+        }
     }
 }

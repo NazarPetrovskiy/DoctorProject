@@ -17,18 +17,21 @@ namespace ClientBLL.Services
         private IRepository<Analysis, int> _repositoryAnalyses;
         private IRepository<Disease, int> _repositoryDisease;
         private IRepository<Doctor, int> _repositoryDoctor;
+        private IRepositoryUser _repositoryUserDoctor;
         private IRepository<PeopleInfo, int> _repositoryPeopleInfo;
 
         public PatientDTOService(IRepository<Patient, int> repositoryPatient,
                                  IRepository<Analysis, int> repositoryAnalyses,
                                  IRepository<Disease, int> repositoryDisease,
                                  IRepository<Doctor, int> repositoryDoctor,
+                                 IRepositoryUser repositoryUserDoctor,
                                  IRepository<PeopleInfo, int> repositoryPeopleInfo)
         {
             _repositoryPatient = repositoryPatient;
             _repositoryAnalyses = repositoryAnalyses;
             _repositoryDisease = repositoryDisease;
             _repositoryDoctor = repositoryDoctor;
+            _repositoryUserDoctor = repositoryUserDoctor;
             _repositoryPeopleInfo = repositoryPeopleInfo;
         }
 
@@ -81,7 +84,7 @@ namespace ClientBLL.Services
             {
                 Id = item.Id,
                 InfoPeople = new PeopleInfoDTOService(_repositoryPeopleInfo).ItemDTO_ToItem(item.InfoPeople),
-                Likar = new DoctorDTOService(_repositoryDoctor, _repositoryPeopleInfo).ItemDTO_ToItem(item.HealingDoctor),
+                Likar = new DoctorDTOService(_repositoryDoctor, _repositoryUserDoctor, _repositoryPeopleInfo).ItemDTO_ToItem(item.HealingDoctor),
                 Analyses = analysis.ToList(),
                 Diseases = diseases.ToList()
             };
@@ -105,7 +108,7 @@ namespace ClientBLL.Services
             {
                 Id = item.Id,
                 InfoPeople = new PeopleInfoDTOService(_repositoryPeopleInfo).Item_ToItemDTO(item.InfoPeople),
-                HealingDoctor = new DoctorDTOService(_repositoryDoctor, _repositoryPeopleInfo).Item_ToItemDTO(item.Likar),
+                HealingDoctor = new DoctorDTOService(_repositoryDoctor, _repositoryUserDoctor, _repositoryPeopleInfo).Item_ToItemDTO(item.Likar),
                 Analyses = analysis.ToList(),
                 Diseases = diseases.ToList()
             };

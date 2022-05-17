@@ -20,15 +20,15 @@ namespace ClientUI
     {
         public MainWindow()
         {
-            WindowLogin login = new WindowLogin();
-            if(login.ShowDialog() == true)
-            {
+            //WindowLogin login = new WindowLogin();
+            //if(login.ShowDialog() == true)
+            //{
                 InitializeComponent();
-            }
-            else
-            {
-                this.Close();
-            }
+            //}
+            //else
+            //{
+                //this.Close();
+            //}
 
             textboxSpeciality.Text = "Doctor";
             textboxName.Text = "Mark";
